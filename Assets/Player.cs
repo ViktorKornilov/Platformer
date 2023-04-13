@@ -24,6 +24,7 @@ public class Player : MonoBehaviour
         if (onGround && (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.W)))
         {
             Jump();
+            
         }
 
         
