@@ -8,6 +8,9 @@ public class Player : MonoBehaviour
     public LayerMask groundLayer;
     private SpriteRenderer spriteRenderer;
 
+    public AudioClip jumpSound;
+    public static float maxSpeed;
+
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -40,6 +43,8 @@ public class Player : MonoBehaviour
     {
         var jumpHeight = SpeedFromHeight(jumpSpeed);
         rb.velocity = Vector2.up * jumpHeight;
+        //Audio.Play("asdasd");
+        Audio.Play(jumpSound);
     }
 
 
