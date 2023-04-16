@@ -43,8 +43,7 @@ public class Player : MonoBehaviour
     {
         var jumpHeight = SpeedFromHeight(jumpSpeed);
         rb.velocity = Vector2.up * jumpHeight;
-        //Audio.Play("asdasd");
-        Audio.Play(jumpSound);
+        Audio.Play(jumpSound,0.3f);
     }
 
 
