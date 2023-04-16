@@ -1,18 +1,16 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
+[SelectionBase]
 public class Portal : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public string nextLevel;
+    
+    private void OnTriggerEnter2D(Collider2D col)
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        if (col.CompareTag("Player"))
+        {
+            SceneManager.LoadScene(nextLevel);
+        }
     }
 }
