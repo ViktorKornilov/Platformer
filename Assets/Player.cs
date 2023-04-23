@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class Player : MonoBehaviour
@@ -53,5 +54,19 @@ public class Player : MonoBehaviour
     float SpeedFromHeight(float height)
     {
         return Mathf.Sqrt(-2 * Physics2D.gravity.y * rb.gravityScale * height);
+    }
+
+
+    public GameObject particlePrefab;
+    private void OnCollisionEnter2D(Collision2D col)
+    {
+        if (!col.gameObject.CompareTag("Ground")) return;
+        
+        for (int i = 0; i < 10; i++)
+        {
+            var pos = transform.position;
+            var rot = Quaternion.Euler(0, 0, 0);
+            Instantiate(particlePrefab,pos,rot);
+        }
     }
 }
